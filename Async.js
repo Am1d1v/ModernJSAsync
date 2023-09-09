@@ -1,6 +1,7 @@
 
 
 const btn = document.querySelector('button');
+const container = document.querySelector('.container');
 
 btn.addEventListener("click",() => {
     getPosts((response) => {
@@ -19,8 +20,11 @@ btn.addEventListener("click",() => {
             article.textContent = post.body;
             cardBody.appendChild(title);
             cardBody.appendChild(article);
-            console.log(cardBody);
+            card.appendChild(cardBody);
+            fragment.appendChild(card);
+            //console.log(cardBody);
         })
+        container.appendChild(fragment);
     });
     
 })
