@@ -44,6 +44,7 @@ getPost(1)
     .then(post => console.log(post));
 */
 
+/*
 function getPost2(id){
     return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
             .then(response => response.json())
@@ -56,9 +57,18 @@ getPost2(2)
 getPost2(3)
     .then(post => console.log(post))
     .catch(error => console.log(error));    
+    */
 
+async function getPost(id){
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
 
+    const data = await response.json();
+    return data;
+}
 
+getPost(1)
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 
 
 
