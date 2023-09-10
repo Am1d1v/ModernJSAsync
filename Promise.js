@@ -62,12 +62,14 @@ getPost2(3)
 async function getPost(id){
 
     
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then(res => res.json());
 
-   // throw new Error('Error');
+    // throw new Error('Error');
 
-    const data = await response.json();
-    return data;
+    //const data = await response.json();
+    //return data;
+    return response;
 }
 
 getPost(1)
